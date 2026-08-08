@@ -1,0 +1,1404 @@
+fileFormatVersion: 2
+guid: e2c308530e18a6240b9a4a271b6f8f28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7673447336106233673
+    second: YouLose (2)_0
+  - first:
+      213: -6171619975512878338
+    second: YouLose (2)_1
+  - first:
+      213: 2978368129308543562
+    second: YouLose (2)_2
+  - first:
+      213: -5660961415010096326
+    second: YouLose (2)_3
+  - first:
+      213: 3837858122884467386
+    second: YouLose (2)_4
+  - first:
+      213: -1712688471393345886
+    second: YouLose (2)_5
+  - first:
+      213: -3062139320128429033
+    second: YouLose (2)_6
+  - first:
+      213: 2850048091633445301
+    second: YouLose (2)_7
+  - first:
+      213: -7824338412954646821
+    second: YouLose (2)_8
+  - first:
+      213: 3040967674072315122
+    second: YouLose (2)_9
+  - first:
+      213: -2649724444860975078
+    second: YouLose (2)_10
+  - first:
+      213: -3160065964731896141
+    second: YouLose (2)_11
+  - first:
+      213: -2463557094786268899
+    second: YouLose (2)_12
+  - first:
+      213: 7100873872874831174
+    second: YouLose (2)_13
+  - first:
+      213: 8969720694491406831
+    second: YouLose (2)_14
+  - first:
+      213: 1492998448568740520
+    second: YouLose (2)_15
+  - first:
+      213: -4517855162827289546
+    second: YouLose (2)_16
+  - first:
+      213: -2970330140054968571
+    second: YouLose (2)_17
+  - first:
+      213: 2035225284831202342
+    second: YouLose (2)_18
+  - first:
+      213: 1749364471196741512
+    second: YouLose (2)_19
+  - first:
+      213: -3256535371657356096
+    second: YouLose (2)_20
+  - first:
+      213: -4138561456570767504
+    second: YouLose (2)_21
+  - first:
+      213: -5042829467271972967
+    second: YouLose (2)_22
+  - first:
+      213: -7509564905245493744
+    second: YouLose (2)_23
+  - first:
+      213: 4214342325316692904
+    second: YouLose (2)_24
+  - first:
+      213: -6730200146711231557
+    second: YouLose (2)_25
+  - first:
+      213: -8519127820452341519
+    second: YouLose (2)_26
+  - first:
+      213: 3400961716617906059
+    second: YouLose (2)_27
+  - first:
+      213: 1357458029891086190
+    second: YouLose (2)_28
+  - first:
+      213: -4559150533423961825
+    second: YouLose (2)_29
+  - first:
+      213: -2748267675833891442
+    second: YouLose (2)_30
+  - first:
+      213: -1119679680528368926
+    second: YouLose (2)_31
+  - first:
+      213: -8525222228346793502
+    second: YouLose (2)_32
+  - first:
+      213: -7899487258343712094
+    second: YouLose (2)_33
+  - first:
+      213: 2972585156558296082
+    second: YouLose (2)_34
+  - first:
+      213: 9123540616081628036
+    second: YouLose (2)_35
+  - first:
+      213: -9069605831437953534
+    second: YouLose (2)_36
+  - first:
+      213: 1679499105678687729
+    second: YouLose (2)_37
+  - first:
+      213: -2009075265911245290
+    second: YouLose (2)_38
+  - first:
+      213: -5969776968396054782
+    second: YouLose (2)_39
+  - first:
+      213: -4742515689503914528
+    second: YouLose (2)_40
+  - first:
+      213: 5577624388905080945
+    second: YouLose (2)_41
+  - first:
+      213: -4457185190328041368
+    second: YouLose (2)_42
+  - first:
+      213: 4944117001669363807
+    second: YouLose (2)_43
+  - first:
+      213: -2236605610217725740
+    second: YouLose (2)_44
+  - first:
+      213: 3109789286581912283
+    second: YouLose (2)_45
+  - first:
+      213: -5175979733678108625
+    second: YouLose (2)_46
+  - first:
+      213: 312390545117376579
+    second: YouLose (2)_47
+  - first:
+      213: -2969757349982169507
+    second: YouLose (2)_48
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: YouLose (2)_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 227
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b078b0bd40728590800000000000000
+      internalID: -7673447336106233673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_1
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 983
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ef299d6b4500a5aa0800000000000000
+      internalID: -6171619975512878338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_2
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 734
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ac7c5980a455920800000000000000
+      internalID: 2978368129308543562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_3
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 719
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b612b06993071b0800000000000000
+      internalID: -5660961415010096326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_4
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 652
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba40e001afc24530800000000000000
+      internalID: 3837858122884467386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_5
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 430
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ae51b3d8ee4b38e0800000000000000
+      internalID: -1712688471393345886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_6
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 390
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7142df223881185d0800000000000000
+      internalID: -3062139320128429033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_7
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 318
+        width: 8
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b9679e93a76d8720800000000000000
+      internalID: 2850048091633445301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_8
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 299
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd605652bad5a6390800000000000000
+      internalID: -7824338412954646821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_9
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 286
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f4b682ecffa33a20800000000000000
+      internalID: 3040967674072315122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_10
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 267
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a18746ff7a94a3bd0800000000000000
+      internalID: -2649724444860975078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_11
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 236
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be6a517fb03524d0800000000000000
+      internalID: -3160065964731896141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_12
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 230
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d110f51ffdfafcdd0800000000000000
+      internalID: -2463557094786268899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_13
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 991
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64d7e835a2f5b8260800000000000000
+      internalID: 7100873872874831174
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_14
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 800
+        width: 7
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe161a1b279da7c70800000000000000
+      internalID: 8969720694491406831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_15
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 774
+        width: 7
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8aa2621cd2238b410800000000000000
+      internalID: 1492998448568740520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_16
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 636
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63cc3018aaa5d41c0800000000000000
+      internalID: -4517855162827289546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_17
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 620
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5072360a97447c6d0800000000000000
+      internalID: -2970330140054968571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_18
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 518
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62cc14c0d929e3c10800000000000000
+      internalID: 2035225284831202342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_19
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 395
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fee50d7bdf64810800000000000000
+      internalID: 1749364471196741512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_20
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 350
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cc5ed555567ec2d0800000000000000
+      internalID: -3256535371657356096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_21
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 336
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 077e9f34840e096c0800000000000000
+      internalID: -4138561456570767504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_22
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 246
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 997b16c4155440ab0800000000000000
+      internalID: -5042829467271972967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_23
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 142
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0163a1d818aa8c790800000000000000
+      internalID: -7509564905245493744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_24
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 86
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8ab256e240a5c7a30800000000000000
+      internalID: 4214342325316692904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_25
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 35
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb3cefbef968992a0800000000000000
+      internalID: -6730200146711231557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_26
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 30
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f85ac1326af5c980800000000000000
+      internalID: -8519127820452341519
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_27
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 8
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8786b589a4a23f20800000000000000
+      internalID: 3400961716617906059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_28
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 951
+        width: 6
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67e825d2e8a6d210800000000000000
+      internalID: 1357458029891086190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_29
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 838
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f196bb9ceb4aab0c0800000000000000
+      internalID: -4559150533423961825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_30
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 606
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e858b3a1c113cd9d0800000000000000
+      internalID: -2748267675833891442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_31
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 542
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ea32eb43491670f0800000000000000
+      internalID: -1119679680528368926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_32
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 532
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e110284d8350b980800000000000000
+      internalID: -8525222228346793502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_33
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 526
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aad2ba11326f5290800000000000000
+      internalID: -7899487258343712094
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_34
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 486
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2149141537eb04920800000000000000
+      internalID: 2972585156558296082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_35
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 406
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48bd46b0ad35d9e70800000000000000
+      internalID: 9123540616081628036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_36
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 220
+        width: 6
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20654549c89422280800000000000000
+      internalID: -9069605831437953534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_37
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 166
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fd709ac987ce4710800000000000000
+      internalID: 1679499105678687729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_38
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 54
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6163650b0b45e14e0800000000000000
+      internalID: -2009075265911245290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_39
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 23
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20fd17af977172da0800000000000000
+      internalID: -5969776968396054782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_40
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 0
+        width: 1277
+        height: 1024
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e507697b133f2eb0800000000000000
+      internalID: -4742515689503914528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_41
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 623
+        width: 11
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1781e3784d3b76d40800000000000000
+      internalID: 5577624388905080945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_42
+      rect:
+        serializedVersion: 2
+        x: 334
+        y: 536
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8608d504fa5e422c0800000000000000
+      internalID: -4457185190328041368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_43
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 344
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f58c87cc7380d9440800000000000000
+      internalID: 4944117001669363807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_44
+      rect:
+        serializedVersion: 2
+        x: 494
+        y: 823
+        width: 146
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d0a35c2c0bf5f0e0800000000000000
+      internalID: -2236605610217725740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_45
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 795
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd2c70931e0382b20800000000000000
+      internalID: 3109789286581912283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_46
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 799
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20de711bd93b28b0800000000000000
+      internalID: -5175979733678108625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_47
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 775
+        width: 6
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34079e0bb85d55400800000000000000
+      internalID: 312390545117376579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: YouLose (2)_48
+      rect:
+        serializedVersion: 2
+        x: 1055
+        y: 796
+        width: 12
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d561535bc6d49c6d0800000000000000
+      internalID: -2969757349982169507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      YouLose (2)_0: -7673447336106233673
+      YouLose (2)_1: -6171619975512878338
+      YouLose (2)_10: -2649724444860975078
+      YouLose (2)_11: -3160065964731896141
+      YouLose (2)_12: -2463557094786268899
+      YouLose (2)_13: 7100873872874831174
+      YouLose (2)_14: 8969720694491406831
+      YouLose (2)_15: 1492998448568740520
+      YouLose (2)_16: -4517855162827289546
+      YouLose (2)_17: -2970330140054968571
+      YouLose (2)_18: 2035225284831202342
+      YouLose (2)_19: 1749364471196741512
+      YouLose (2)_2: 2978368129308543562
+      YouLose (2)_20: -3256535371657356096
+      YouLose (2)_21: -4138561456570767504
+      YouLose (2)_22: -5042829467271972967
+      YouLose (2)_23: -7509564905245493744
+      YouLose (2)_24: 4214342325316692904
+      YouLose (2)_25: -6730200146711231557
+      YouLose (2)_26: -8519127820452341519
+      YouLose (2)_27: 3400961716617906059
+      YouLose (2)_28: 1357458029891086190
+      YouLose (2)_29: -4559150533423961825
+      YouLose (2)_3: -5660961415010096326
+      YouLose (2)_30: -2748267675833891442
+      YouLose (2)_31: -1119679680528368926
+      YouLose (2)_32: -8525222228346793502
+      YouLose (2)_33: -7899487258343712094
+      YouLose (2)_34: 2972585156558296082
+      YouLose (2)_35: 9123540616081628036
+      YouLose (2)_36: -9069605831437953534
+      YouLose (2)_37: 1679499105678687729
+      YouLose (2)_38: -2009075265911245290
+      YouLose (2)_39: -5969776968396054782
+      YouLose (2)_4: 3837858122884467386
+      YouLose (2)_40: -4742515689503914528
+      YouLose (2)_41: 5577624388905080945
+      YouLose (2)_42: -4457185190328041368
+      YouLose (2)_43: 4944117001669363807
+      YouLose (2)_44: -2236605610217725740
+      YouLose (2)_45: 3109789286581912283
+      YouLose (2)_46: -5175979733678108625
+      YouLose (2)_47: 312390545117376579
+      YouLose (2)_48: -2969757349982169507
+      YouLose (2)_5: -1712688471393345886
+      YouLose (2)_6: -3062139320128429033
+      YouLose (2)_7: 2850048091633445301
+      YouLose (2)_8: -7824338412954646821
+      YouLose (2)_9: 3040967674072315122
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

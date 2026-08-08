@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8e6d6efda189b474eb98acf1eba2e3fb
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - lavaPrefab: {instanceID: 0}
+  - safeIslandPrefab: {instanceID: 0}
+  - diamondPrefab: {instanceID: 0}
+  - gridParent: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
