@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 
 public class TPSCamera : MonoBehaviour
@@ -27,7 +28,8 @@ public class TPSCamera : MonoBehaviour
 
     void LateUpdate()
     {
-        if (target == null) return;
+        if (target == null)
+            return;
 
         HandleRotation();
         FollowPlayerWithCollision();
@@ -37,50 +39,70 @@ public class TPSCamera : MonoBehaviour
     {
 #if UNITY_EDITOR || UNITY_STANDALONE
 
-        // PC mouse control
-        float mouseX = Input.GetAxis("Mouse X");
-        float mouseY = Input.GetAxis("Mouse Y");
+        // New Input System mouse control
+        if (Mouse.current != null)
+        {
+            Vector2 mouseDelta = Mouse.current.delta.ReadValue();
 
-        currentYaw += mouseX * horizontalSensitivity * Time.deltaTime;
+            currentYaw += mouseDelta.x *
+                          horizontalSensitivity *
+                          Time.deltaTime;
 
-        currentPitch -= mouseY * verticalSensitivity * Time.deltaTime;
+            currentPitch -= mouseDelta.y *
+                            verticalSensitivity *
+                            Time.deltaTime;
+        }
 
 #else
 
-        // MOBILE touch control (ignore joystick side touches)
-        if (Input.touchCount > 0)
+        // Mobile touch control
+        if (Touchscreen.current != null)
         {
-            Touch touch = Input.GetTouch(0);
+            Touch touch = Touchscreen.current.primaryTouch;
 
-            // Ignore touches on UI (joystick)
-            if (EventSystem.current.IsPointerOverGameObject(touch.fingerId))
-                return;
-
-            if (touch.position.x < Screen.width * 0.5f)
-                return; // ignore left side touches (movement joystick)
-
-            if (touch.phase == TouchPhase.Moved)
+            if (touch.press.isPressed)
             {
-                currentYaw += touch.deltaPosition.x *
-                              horizontalSensitivity * 0.02f * Time.deltaTime;
+                Vector2 touchPosition = touch.position.ReadValue();
 
-                currentPitch -= touch.deltaPosition.y *
-                                verticalSensitivity * 0.02f * Time.deltaTime;
+                // Ignore touches on UI
+                if (EventSystem.current != null &&
+                    EventSystem.current.IsPointerOverGameObject())
+                    return;
+
+                // Ignore left side (joystick)
+                if (touchPosition.x < Screen.width * 0.5f)
+                    return;
+
+                Vector2 delta = touch.delta.ReadValue();
+
+                currentYaw += delta.x *
+                              horizontalSensitivity *
+                              0.02f *
+                              Time.deltaTime;
+
+                currentPitch -= delta.y *
+                                verticalSensitivity *
+                                0.02f *
+                                Time.deltaTime;
             }
         }
 
 #endif
 
-        currentPitch = Mathf.Clamp(currentPitch, minPitch, maxPitch);
+        currentPitch = Mathf.Clamp(
+            currentPitch,
+            minPitch,
+            maxPitch
+        );
     }
 
     void FollowPlayerWithCollision()
     {
         Quaternion rotation =
-            Quaternion.Euler(currentPitch, currentYaw, 0);
+            Quaternion.Euler(currentPitch, currentYaw, 0f);
 
         Vector3 offset =
-            rotation * new Vector3(0, height, -distance);
+            rotation * new Vector3(0f, height, -distance);
 
         Vector3 desiredPosition =
             target.position + offset;
@@ -88,16 +110,13 @@ public class TPSCamera : MonoBehaviour
         Vector3 direction =
             desiredPosition - target.position;
 
-        RaycastHit hit;
-
         if (Physics.SphereCast(
             target.position,
             collisionRadius,
             direction.normalized,
-            out hit,
-            distance,
-            collisionLayers
-        ))
+            out RaycastHit hit,
+            direction.magnitude,
+            collisionLayers))
         {
             desiredPosition =
                 hit.point + hit.normal * collisionRadius;

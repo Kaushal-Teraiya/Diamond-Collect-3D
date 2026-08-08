@@ -1,33 +1,40 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class MobilePlayerMovement : MonoBehaviour
 {
     public FloatingJoystick joystick;
     public Transform cameraTransform;
 
+    [Header("Movement")]
     public float moveSpeed = 7f;
     public float sprintMultiplier = 1.5f;
-
     public float rotationSpeed = 12f;
     public float directionSmoothTime = 0.12f;
 
+    [Header("Jump")]
+    public float jumpForce = 7f;
+    public float groundCheckDistance = 0.15f;
+    public LayerMask groundLayer;
+
     public bool sprintActive = false;
 
-    CharacterController controller;
-    Animator animator;
-
+    Rigidbody rb;
     GameInputc input;
 
     Vector3 currentMoveDirection;
     Vector3 moveDirectionVelocity;
 
+    bool isGrounded;
+
     void Start()
     {
-        controller = GetComponent<CharacterController>();
-        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody>();
 
         input = new GameInputc();
         input.Enable();
+
+        rb.freezeRotation = true;
     }
 
     void OnDestroy()
@@ -37,7 +44,27 @@ public class MobilePlayerMovement : MonoBehaviour
 
     void Update()
     {
-        Vector2 keyboardInput = input.Gameplay.Move.ReadValue<Vector2>();
+        if (!GameManager.Instance.IsInState(GameState.Running))
+            return;
+
+        CheckGrounded();
+
+        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        {
+            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (!GameManager.Instance.IsInState(GameState.Running))
+        {
+            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
+            return;
+        }
+
+        Vector2 keyboardInput =
+            input.Gameplay.Move.ReadValue<Vector2>();
 
         float joystickX = joystick.Horizontal;
         float joystickZ = joystick.Vertical;
@@ -57,8 +84,6 @@ public class MobilePlayerMovement : MonoBehaviour
 
         float moveAmount = inputDirection.magnitude;
 
-        animator.SetFloat("Speed", moveAmount);
-
         if (moveAmount > 0.1f)
         {
             float targetAngle =
@@ -73,7 +98,7 @@ public class MobilePlayerMovement : MonoBehaviour
                 Quaternion.Slerp(
                     transform.rotation,
                     targetRotation,
-                    rotationSpeed * Time.deltaTime
+                    rotationSpeed * Time.fixedDeltaTime
                 );
 
             Vector3 targetMoveDirection =
@@ -86,15 +111,34 @@ public class MobilePlayerMovement : MonoBehaviour
                     ref moveDirectionVelocity,
                     directionSmoothTime
                 );
-
-            float speed = moveSpeed;
-
-            if (sprintActive)
-                speed *= sprintMultiplier;
-
-            controller.Move(
-                currentMoveDirection * speed * Time.deltaTime
-            );
         }
+        else
+        {
+            currentMoveDirection = Vector3.zero;
+        }
+
+        float speed = moveSpeed;
+
+        if (sprintActive)
+            speed *= sprintMultiplier;
+
+        Vector3 velocity = currentMoveDirection * speed;
+
+        // Preserve Rigidbody's Y velocity for jumping/gravity
+        velocity.y = rb.linearVelocity.y;
+
+        rb.linearVelocity = velocity;
+    }
+
+    void CheckGrounded()
+    {
+        Vector3 origin = transform.position + Vector3.up * 0.1f;
+
+        isGrounded = Physics.Raycast(
+            origin,
+            Vector3.down,
+            groundCheckDistance + 0.1f,
+            groundLayer
+        );
     }
 }
