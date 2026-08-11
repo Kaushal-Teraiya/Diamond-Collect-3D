@@ -1314,8 +1314,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e6d6efda189b474eb98acf1eba2e3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GridGenerator
-  maxDiamondsCount: 5
-  minDiamondsCount: 1
+  maxDiamondsCount: 25
+  minDiamondsCount: 45
   lavaChance: 0.438
   rows: 8
   columns: 16
