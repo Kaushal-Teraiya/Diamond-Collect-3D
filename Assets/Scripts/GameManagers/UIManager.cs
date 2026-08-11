@@ -3,6 +3,7 @@ using UnityEngine;
 using DG.Tweening;
 using System.Collections;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject gridParent;
     [SerializeField] private GameObject restartButton;
     [SerializeField] private GameObject quitButton;
-    [SerializeField] private SpriteRenderer timerSprite;
+    [SerializeField] private Image timerImage;
     private Tween timerBlinkTween;
     private Coroutine fireRoutine;
 
@@ -50,6 +51,12 @@ public class UIManager : MonoBehaviour
 
     private void UpdateHeartsUI(int currentLives)
     {
+        if (currentLives < 0 || currentLives >= hearts.Length)
+        {
+            Debug.LogError("Invalid heart index: " + currentLives);
+            return;
+        }
+
         hearts[currentLives].BlinkNDisable();
     }
 
@@ -100,17 +107,21 @@ public class UIManager : MonoBehaviour
 
     public void StartTimerBlink()
     {
-        if (timerBlinkTween != null && timerBlinkTween.IsActive()) return;
+        Debug.Log("🔥 TIMER BLINK CALLED");
 
-        timerBlinkTween = timerSprite
-        .DOColor(Color.red, 0.4f)
-        .SetLoops(-1, LoopType.Yoyo);
+        if (timerBlinkTween != null && timerBlinkTween.IsActive())
+            return;
+
+        timerBlinkTween = timerImage
+            .DOColor(Color.red, 0.4f)
+            .SetLoops(-1, LoopType.Yoyo);
     }
 
     public void StopTimerBlink()
     {
         timerBlinkTween?.Kill();
-        timerSprite.color = Color.white;
+
+        if (timerImage != null) timerImage.color = Color.white;
     }
 
     public void RestartGame()

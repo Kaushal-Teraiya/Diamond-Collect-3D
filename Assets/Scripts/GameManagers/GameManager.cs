@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public event Action<int> OnLivesChanged;
     public event Action<int, int> OnDiamondsChanged;
     public event Action<float> OnTimerChanged;
+    [SerializeField] private UIManager UIManager;
 
 
     [Header("Timer")]
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     [Header("Lives")]
     public int CurrentLives { get; private set; }
     [SerializeField] private int maxLives;
-    private bool timeWarningStarted;
+    private bool timeWarningStarted = false;
 
     [Header("Diamonds")]
     public int TotalDiamonds { get; private set; }
@@ -52,8 +53,8 @@ public class GameManager : MonoBehaviour
         if (CurrentTime <= 10f && !timeWarningStarted)
         {
             timeWarningStarted = true;
-            AudioManager.Instance.StartTimerWarning();
-            FindFirstObjectByType<UIManager>().StartTimerBlink();
+            AudioManager.Instance?.StartTimerWarning();
+            UIManager.StartTimerBlink();
         }
 
         if (CurrentTime <= 0)
