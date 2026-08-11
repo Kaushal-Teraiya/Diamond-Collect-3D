@@ -7,22 +7,22 @@ public class Diamond : MonoBehaviour, IClickable
     [SerializeField] private ParticleSystem PlusOneEffect;
     [SerializeField] private Animator animator;
     [SerializeField] private Collider diamondCollider;
-    // [SerializeField] private SpriteRenderer spriteRenderer;
 
+    bool collected;
 
     public void OnClicked()
     {
         if (!GameManager.Instance.IsInState(GameState.Running)) return;
 
         Collect();
-
         Debug.Log("Diamond Clicked");
     }
+
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("DIAMOND TRIGGER: " + other.name);
+        if (collected) return;
 
-        if (other.GetComponent<CharacterController>() != null)
+        if (other.CompareTag("Player"))
         {
             Debug.Log("PLAYER COLLECTING DIAMOND");
             Collect();
@@ -31,18 +31,29 @@ public class Diamond : MonoBehaviour, IClickable
 
     private void Collect()
     {
-        AudioManager.Instance.PlayDiamondPickup(); //Play Sfx
+        if (collected) return;
+        collected = true;
 
-        //Disable individual components so that pickup Burst effect can be played before destroying the whole object.
-        ambientParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
-        pickupEffect.Play();
-        PlusOneEffect.Play();
+        AudioManager.Instance.PlayDiamondPickup();
 
-        diamondCollider.enabled = false;
-        //spriteRenderer.enabled = false;
-        animator.enabled = false;
+        if (ambientParticles != null)
+            ambientParticles.Stop(true, ParticleSystemStopBehavior.StopEmitting);
 
-        GameManager.Instance.CollectDiamond(); // Update Diamond count in Game Manager.
-        Destroy(gameObject, pickupEffect.main.duration);
+        if (pickupEffect != null)
+            pickupEffect.Play();
+
+        if (PlusOneEffect != null)
+            PlusOneEffect.Play();
+
+        if (diamondCollider != null)
+            diamondCollider.enabled = false;
+
+        if (animator != null)
+            animator.enabled = false;
+
+        GameManager.Instance.CollectDiamond();
+
+        float destroyTime = pickupEffect != null ? pickupEffect.main.duration : 0f;
+        Destroy(gameObject, destroyTime);
     }
 }

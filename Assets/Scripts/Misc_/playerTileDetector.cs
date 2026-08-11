@@ -4,8 +4,20 @@ public class PlayerTileDetector : MonoBehaviour
 {
     [SerializeField] private float rayDistance = 3f;
     [SerializeField] private LayerMask tileLayer;
+    [SerializeField] private float respawnHeight = 1.5f;
+    [SerializeField] private float fallHeight = -5f;
 
-    private bool onLava;
+    Rigidbody rb;
+
+    Vector3 lastSafePosition;
+    bool hasSafePosition;
+    bool onLava;
+
+    void Awake()
+    {
+        rb = GetComponent<Rigidbody>();
+        lastSafePosition = rb.position;
+    }
 
     void Update()
     {
@@ -14,22 +26,64 @@ public class PlayerTileDetector : MonoBehaviour
             Vector3.down
         );
 
-        if (Physics.Raycast(ray, out RaycastHit hit, rayDistance, tileLayer))
+        if (Physics.Raycast(
+            ray,
+            out RaycastHit hit,
+            rayDistance,
+            tileLayer))
         {
-            bool currentlyOnLava = hit.collider.CompareTag("Lava");
-
-            if (currentlyOnLava && !onLava)
+            if (hit.collider.CompareTag("Grass"))
             {
-                Debug.Log("🔥 DAMAGE TRIGGERED");
-                Debug.Log("GameManager: " + GameManager.Instance);
+                onLava = false;
 
-                GameManager.Instance.TakeDamage();
+                // SAVE THE PLAYER'S ACTUAL POSITION.
+                // Only save it while safely standing on Grass.
+                lastSafePosition = hit.collider.bounds.center;
+                lastSafePosition.y = respawnHeight;
+                hasSafePosition = true;
             }
-            onLava = currentlyOnLava;
+            else if (hit.collider.CompareTag("Lava"))
+            {
+                if (!onLava)
+                {
+                    onLava = true;
+
+                    GameManager.Instance.TakeDamage();
+
+                    Teleport();
+                }
+            }
         }
         else
         {
             onLava = false;
         }
+
+        if (rb.position.y <= fallHeight)
+        {
+            Teleport();
+        }
+    }
+
+    private void Teleport()
+    {
+        if (!hasSafePosition)
+        {
+            Debug.LogWarning("NO SAFE POSITION SAVED!");
+            return;
+        }
+
+        Vector3 position = lastSafePosition;
+        position.y = respawnHeight;
+
+        rb.position = position;
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
+
+        Physics.SyncTransforms();
+
+        onLava = false;
+
+        Debug.Log("RESPAWNED AT: " + position);
     }
 }

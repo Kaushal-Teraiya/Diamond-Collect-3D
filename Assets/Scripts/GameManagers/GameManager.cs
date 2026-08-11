@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
 
         if (CurrentTime <= 0)
         {
+            Debug.Log("Timer Ran out");
             SetState(GameState.Lost);
         }
 
@@ -78,6 +79,7 @@ public class GameManager : MonoBehaviour
 
         if (CurrentLives <= 0)
         {
+            Debug.Log("Player is Dead");
             SetState(GameState.Lost);
         }
     }

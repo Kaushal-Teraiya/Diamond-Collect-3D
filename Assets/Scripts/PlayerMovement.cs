@@ -3,43 +3,41 @@ using UnityEngine.InputSystem;
 
 public class MobilePlayerMovement : MonoBehaviour
 {
-    public FloatingJoystick joystick;
     public Transform cameraTransform;
-
-    [Header("Movement")]
     public float moveSpeed = 7f;
-    public float sprintMultiplier = 1.5f;
     public float rotationSpeed = 12f;
-    public float directionSmoothTime = 0.12f;
-
-    [Header("Jump")]
     public float jumpForce = 7f;
-    public float groundCheckDistance = 0.15f;
+    public float groundCheckDistance = 1.2f;
     public LayerMask groundLayer;
-
-    public bool sprintActive = false;
+    public float acceleration = 20f;
+    public float deceleration = 8f;
 
     Rigidbody rb;
     GameInputc input;
-
-    Vector3 currentMoveDirection;
-    Vector3 moveDirectionVelocity;
-
-    bool isGrounded;
-
-    void Start()
+    bool grounded;
+    bool jumpRequested;
+    private float gravityMultiplier = 3f;
+    public float groundAcceleration = 60f;
+    public float airAcceleration = 15f;
+    void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
         input = new GameInputc();
-        input.Enable();
 
-        rb.freezeRotation = true;
+        rb.useGravity = true;
+        rb.isKinematic = false;
+        rb.interpolation = RigidbodyInterpolation.Interpolate;
+        rb.constraints = RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
     }
 
-    void OnDestroy()
+    void OnEnable()
     {
-        input?.Disable();
+        input.Enable();
+    }
+
+    void OnDisable()
+    {
+        input.Disable();
     }
 
     void Update()
@@ -47,98 +45,116 @@ public class MobilePlayerMovement : MonoBehaviour
         if (!GameManager.Instance.IsInState(GameState.Running))
             return;
 
-        CheckGrounded();
+        grounded = Physics.Raycast(
+            transform.position + Vector3.up * 0.1f,
+            Vector3.down,
+            groundCheckDistance,
+            groundLayer
+        );
 
-        if (Keyboard.current.spaceKey.wasPressedThisFrame && isGrounded)
+        if (Keyboard.current != null &&
+            Keyboard.current.spaceKey.wasPressedThisFrame)
         {
-            rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            jumpRequested = true;
         }
     }
 
     void FixedUpdate()
     {
         if (!GameManager.Instance.IsInState(GameState.Running))
-        {
-            rb.linearVelocity = new Vector3(0f, rb.linearVelocity.y, 0f);
             return;
+
+        Vector2 inputValue = input.Gameplay.Move.ReadValue<Vector2>();
+
+        Vector3 inputDirection = new Vector3(
+            inputValue.x,
+            0f,
+            inputValue.y
+        );
+
+        Vector3 velocity = rb.linearVelocity;
+
+        bool wasGrounded = grounded;
+
+        grounded = Physics.Raycast(
+            transform.position + Vector3.up * 0.1f,
+            Vector3.down,
+            groundCheckDistance,
+            groundLayer
+        );
+
+        // Just landed
+        if (grounded && velocity.y <= 0f)
+        {
+            velocity.x = 0f;
+            velocity.z = 0f;
+            velocity.y = -0.5f;
         }
 
-        Vector2 keyboardInput =
-            input.Gameplay.Move.ReadValue<Vector2>();
-
-        float joystickX = joystick.Horizontal;
-        float joystickZ = joystick.Vertical;
-
-        float horizontal =
-            Mathf.Abs(keyboardInput.x) > Mathf.Abs(joystickX)
-            ? keyboardInput.x
-            : joystickX;
-
-        float vertical =
-            Mathf.Abs(keyboardInput.y) > Mathf.Abs(joystickZ)
-            ? keyboardInput.y
-            : joystickZ;
-
-        Vector3 inputDirection =
-            new Vector3(horizontal, 0f, vertical);
-
-        float moveAmount = inputDirection.magnitude;
-
-        if (moveAmount > 0.1f)
+        if (inputDirection.sqrMagnitude > 0.01f)
         {
-            float targetAngle =
-                Mathf.Atan2(inputDirection.x, inputDirection.z)
-                * Mathf.Rad2Deg
-                + cameraTransform.eulerAngles.y;
+            inputDirection.Normalize();
 
-            Quaternion targetRotation =
-                Quaternion.Euler(0f, targetAngle, 0f);
+            float angle =
+                Mathf.Atan2(inputDirection.x, inputDirection.z) *
+                Mathf.Rad2Deg +
+                cameraTransform.eulerAngles.y;
 
-            transform.rotation =
+            Quaternion rotation =
+                Quaternion.Euler(0f, angle, 0f);
+
+            rb.MoveRotation(
                 Quaternion.Slerp(
-                    transform.rotation,
-                    targetRotation,
+                    rb.rotation,
+                    rotation,
                     rotationSpeed * Time.fixedDeltaTime
-                );
+                )
+            );
 
-            Vector3 targetMoveDirection =
-                targetRotation * Vector3.forward;
+            Vector3 direction =
+                rotation * Vector3.forward;
 
-            currentMoveDirection =
-                Vector3.SmoothDamp(
-                    currentMoveDirection,
-                    targetMoveDirection,
-                    ref moveDirectionVelocity,
-                    directionSmoothTime
-                );
+            Vector3 targetVelocity =
+                direction * moveSpeed;
+            float accel = grounded ? groundAcceleration : airAcceleration;
+
+            velocity.x = Mathf.MoveTowards(
+                velocity.x,
+                targetVelocity.x,
+                accel * Time.fixedDeltaTime
+            );
+
+            velocity.z = Mathf.MoveTowards(
+                velocity.z,
+                targetVelocity.z,
+                accel * Time.fixedDeltaTime
+            );
+        }
+        else if (!grounded)
+        {
+            // Keep momentum while airborne
         }
         else
         {
-            currentMoveDirection = Vector3.zero;
+            // Stop immediately when standing still on a tile
+            velocity.x = 0f;
+            velocity.z = 0f;
         }
 
-        float speed = moveSpeed;
+        // Faster falling
+        if (!grounded)
+        {
+            velocity += Physics.gravity *
+                        (gravityMultiplier - 1f) *
+                        Time.fixedDeltaTime;
+        }
 
-        if (sprintActive)
-            speed *= sprintMultiplier;
-
-        Vector3 velocity = currentMoveDirection * speed;
-
-        // Preserve Rigidbody's Y velocity for jumping/gravity
-        velocity.y = rb.linearVelocity.y;
+        if (jumpRequested && grounded)
+        {
+            velocity.y = jumpForce;
+            jumpRequested = false;
+        }
 
         rb.linearVelocity = velocity;
-    }
-
-    void CheckGrounded()
-    {
-        Vector3 origin = transform.position + Vector3.up * 0.1f;
-
-        isGrounded = Physics.Raycast(
-            origin,
-            Vector3.down,
-            groundCheckDistance + 0.1f,
-            groundLayer
-        );
     }
 }

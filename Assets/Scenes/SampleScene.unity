@@ -276,11 +276,17 @@ MonoBehaviour:
   verticalSensitivity: 80
   minPitch: -10
   maxPitch: 45
-  smoothSpeed: 10
+  positionSmoothTime: 0.08
   collisionRadius: 0.3
   collisionLayers:
     serializedVersion: 2
     m_Bits: 0
+  normalPitch: 15
+  jumpPitch: 35
+  pitchTransitionSpeed: 8
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &410087039
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,8 +443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd3cebc0068590140bdd173b4a04073a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  maxTime: 0
-  maxLives: 0
+  maxTime: 30
+  maxLives: 3
 --- !u!4 &458453842
 Transform:
   m_ObjectHideFlags: 0
@@ -731,6 +737,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Floating Joystick
       objectReference: {fileID: 0}
+    - target: {fileID: 8170153791668043269, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -750,8 +760,10 @@ GameObject:
   - component: {fileID: 1219016033}
   - component: {fileID: 1219016032}
   - component: {fileID: 1219016037}
-  - component: {fileID: 1219016038}
   - component: {fileID: 1219016039}
+  - component: {fileID: 1219016040}
+  - component: {fileID: 1219016041}
+  - component: {fileID: 1219016042}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -771,15 +783,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3d50f7e10ae2ce4a855b5e3fe8f5680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MobilePlayerMovement
-  joystick: {fileID: 8170153791668043265, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
   cameraTransform: {fileID: 330585546}
-  moveSpeed: 10
-  sprintMultiplier: 1.5
+  moveSpeed: 50
   rotationSpeed: 12
-  directionSmoothTime: 0.12
-  jumpHeight: 5
-  gravity: 0
-  sprintActive: 0
+  jumpForce: 20
+  groundCheckDistance: 1.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 72
+  acceleration: 20
+  deceleration: 8
+  groundAcceleration: 500
+  airAcceleration: 20
 --- !u!136 &1219016033
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -898,31 +913,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!143 &1219016038
-CharacterController:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1219016031}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
-  m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!136 &1219016039
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -938,7 +928,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -946,6 +936,65 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1219016040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219016031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 766b96bc6606ceb4081e034eac2b4642, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  rayDistance: 5
+  tileLayer:
+    serializedVersion: 2
+    m_Bits: 72
+  respawnHeight: 5
+  fallHeight: -10
+--- !u!54 &1219016041
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219016031}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &1219016042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1219016031}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0db775518bfeb5642b6585ec0a9ccee2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  teleportLevel: -10
+  groundLevel: 5
 --- !u!1 &1324885229
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1469,10 @@ PrefabInstance:
     - target: {fileID: 3601657443875957075, guid: d4bf07ef8f303c74fbf4c4277401cbcd, type: 3}
       propertyPath: m_Name
       value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 3601657443875957075, guid: d4bf07ef8f303c74fbf4c4277401cbcd, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
