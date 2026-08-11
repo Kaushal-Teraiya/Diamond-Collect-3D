@@ -24,7 +24,7 @@ public class Lava : MonoBehaviour, IClickable
         Debug.Log("Clicked Lava");
     }
 
-    private void DamagePlayer()
+    public void DamagePlayer()
     {
         //Play lava damage sfx
         AudioManager.Instance.PlayWrongClick();

@@ -48,9 +48,12 @@ public class PlayerTileDetector : MonoBehaviour
                 {
                     onLava = true;
 
-                    GameManager.Instance.TakeDamage();
-
-                    Teleport();
+                    Lava lava = hit.collider.GetComponent<Lava>();
+                    if (lava != null)
+                    {
+                        lava.DamagePlayer();
+                        Teleport();
+                    }
                 }
             }
         }
